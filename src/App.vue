@@ -1,47 +1,98 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+<header>
+  <h1>Asafa</h1>
+  <form action="" class="search" @submit="searchTitle">
+    <input type="search" class="search-bar" placeholder="search a title" v-model="title">
+  <button class="submit-btn">search</button>
+  </form>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+</header>
+<main>
+  <div class="menu-and-contains">
+  <div class="menu-bars">  
+    <p>Home</p>
+    <p>Search</p>
+    <p>Singers</p>
+    <p>Title sing</p>
+    <p>Settings</p>
+    <p>About</p>
+  </div>
+  <div>
+<h2>Title</h2>
+<p>Contains</p>
+  </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+</main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script setup>
+import { ref } from 'vue';
+
+const title = ref('')
+
+</script>
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+html,body{
+  height: 100%;
+  width: 100%;
 }
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+header{
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(0, 31, 46);
+  align-items: center;
+  text-align: center;
+  padding: 2vh;
+}
+main{
+  height: calc(100vh - 70px);
+  display: flex;
+}
+.menu-bars{
+  background-color: rgb(0, 31, 46);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: x-large;
+  align-items: center;
+  height: 100%;
+  width: 10vw;
+  min-width: 150px;
+  padding-top: 2rem;
+  justify-content: space-evenly;
+}
+.menu-and-contains{
+  display: flex;
+  width: 100%;
+  
+}
+.menu-bars p{  
+  text-align: center;
+  width: 100%;
+  padding-block: 3rem;
+}
+.menu-bars p:hover{
+  opacity: 80%;
+  background-color: rgb(192, 131, 0);
+  text-align: center;
+  width: 100%;
+}
+.search{
+  display: flex;
+}
+.search-bar{
+ padding-block: 1vh;
+ width: 20vw;
+}
+.submit-btn{
+  padding-inline: 1rem;
+  background-color: white;
 }
 </style>
