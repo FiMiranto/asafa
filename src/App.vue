@@ -17,9 +17,8 @@
     <p>Settings</p>
     <p>About</p>
   </div>
-  <div>
-<h2>Title</h2>
-<p>Contains</p>
+  <div class="home">
+<h2>Welcome to Asafa</h2>
   </div>
     </div>
 </main>
@@ -53,8 +52,16 @@ header{
 }
 main{
   height: calc(100vh - 70px);
+  color: white;
   display: flex;
-}
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.95)),
+    url('@/assets/images/backgrounds/song-7058726_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 .menu-bars{
   background-color: rgb(0, 31, 46);
   color: white;
@@ -94,5 +101,13 @@ main{
 .submit-btn{
   padding-inline: 1rem;
   background-color: white;
+}
+.home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: xx-large;
 }
 </style>
